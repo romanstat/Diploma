@@ -75,7 +75,7 @@ namespace Product.Учащийся
             Passing();
         }
 
-        private void Passing()
+        private async void Passing()
         {
             if (_questionsFirstPart.Count == _numberOfQuestion)
             {
@@ -102,19 +102,8 @@ namespace Product.Учащийся
                 var result = new Result(_allBalls, _numberOfPoints, studentAssessment, _startOfTest, _result);
                 result.ShowDialog();
 
-                using (FileStream fs = new FileStream("passedTests.dat", FileMode.OpenOrCreate))
+                using (ApplicationDbContext context = new ApplicationDbContext())
                 {
-                    List<PassedTest> passedTests;
-
-                    try
-                    {
-                        passedTests = new BinaryFormatter().Deserialize(fs) as List<PassedTest>;
-                    }
-                    catch
-                    {
-                        passedTests = new List<PassedTest>();
-                    }
-
                     var passedTest = new PassedTest()
                     {
                         FirstName = _student.FirstName,
@@ -126,8 +115,8 @@ namespace Product.Учащийся
                         PassedDate = DateTime.Now,
                     };
 
-                    passedTests.Add(passedTest);
-                    new BinaryFormatter().Serialize(fs, passedTests);
+                    await context.PassedTests.AddAsync(passedTest);
+                    await context.SaveChangesAsync();
                 }
 
                 Close();
@@ -168,6 +157,33 @@ namespace Product.Учащийся
         {
             var studentAssessment = Math.Round(_numberOfPoints / _allBalls * 10.0, 2);
             MessageBox.Show($"Количество баллов: {_numberOfPoints}/{_allBalls}\nОценка: {studentAssessment}");
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedIndex = listBox1.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("Не выбран ответ");
+                return;
+            }
+
+            var selectedAnswer = listBox1.Items[listBox1.SelectedIndex].ToString();
+            var corretAnswer = _currentAnswers.Find(f => f.Contains("*")).Remove(0, 1);
+
+            if (corretAnswer == selectedAnswer)
+            {
+                _numberOfPoints += 1;
+                _result.Add(_currentQuestion, true);
+            }
+            else
+            {
+                _result.Add(_currentQuestion, false);
+            }
+
+            listBox1.Items.Clear();
+            _numberOfQuestion++;
+            Passing();
         }
     }
 }

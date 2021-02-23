@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Product
@@ -11,7 +12,6 @@ namespace Product
     public partial class TeacherMenu : Form
     {
         private List<Test> _tests;
-        private readonly List<PassedTest> _passedTests;
 
         public TeacherMenu()
         {
@@ -27,18 +27,6 @@ namespace Product
             catch
             {
                 _tests = new List<Test>();
-            }
-
-            try
-            {
-                using (FileStream fs2 = new FileStream("passedTests.dat", FileMode.OpenOrCreate))
-                {
-                    _passedTests = new BinaryFormatter().Deserialize(fs2) as List<PassedTest>;
-                }
-            }
-            catch
-            {
-                _passedTests = new List<PassedTest>();
             }
         }
 
@@ -90,19 +78,6 @@ namespace Product
             else
             {
                 MessageBox.Show("Не выбрана тема");
-            }
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                var results = new StudentResults(_passedTests);
-                results.ShowDialog();
-            }
-            catch
-            {
-                MessageBox.Show("Тесты не проходили");
             }
         }
 
@@ -183,12 +158,11 @@ namespace Product
             }
         }
 
-        private void результатыToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void результатыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                var results = new StudentResults(_passedTests);
-                results.ShowDialog();
+                await Task.Run(() => new StudentResults().ShowDialog());
             }
             catch
             {

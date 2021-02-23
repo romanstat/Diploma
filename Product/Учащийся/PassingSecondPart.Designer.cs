@@ -45,38 +45,42 @@ namespace Product.Учащийся
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 23);
+            this.label1.Size = new System.Drawing.Size(88, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(285, 134);
+            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(429, 150);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(687, 32);
+            this.textBox1.Size = new System.Drawing.Size(687, 45);
             this.textBox1.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(8, 137);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(5, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(271, 23);
+            this.label3.Size = new System.Drawing.Size(403, 38);
             this.label3.TabIndex = 5;
             this.label3.Text = "Введите свой вариант ответа:";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(12, 173);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(30, 243);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 41);
+            this.button1.Size = new System.Drawing.Size(171, 59);
             this.button1.TabIndex = 6;
             this.button1.Text = "Ответить";
             this.button1.UseVisualStyleBackColor = false;
@@ -86,10 +90,11 @@ namespace Product.Учащийся
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(701, 9);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(721, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 23);
+            this.label4.Size = new System.Drawing.Size(266, 38);
             this.label4.TabIndex = 7;
             this.label4.Text = "Оставшееся время:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -98,10 +103,11 @@ namespace Product.Учащийся
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(886, 9);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(993, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 23);
+            this.label5.Size = new System.Drawing.Size(129, 38);
             this.label5.TabIndex = 8;
             this.label5.Text = "00:00:00";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -114,6 +120,7 @@ namespace Product.Учащийся
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(12, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(960, 65);
@@ -122,10 +129,10 @@ namespace Product.Учащийся
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(-4, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(92, 38);
             this.label2.TabIndex = 7;
             this.label2.Text = "label2";
             // 
@@ -134,7 +141,9 @@ namespace Product.Учащийся
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(984, 226);
+            this.BackgroundImage = global::Product.Properties.Resources._1593666815_56_p_neitralnii_fon_66;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1134, 314);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -142,6 +151,7 @@ namespace Product.Учащийся
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "PassingSecondPart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

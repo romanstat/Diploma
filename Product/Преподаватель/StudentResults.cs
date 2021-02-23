@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Product.Преподаватель
 {
     public partial class StudentResults : Form
     {
-        public StudentResults(List<PassedTest> passedTests)
+        public StudentResults()
         {
             InitializeComponent();
-            for (int i = 0; i < passedTests?.Count; i++)
+
+            using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                dataGridView1.Rows.Add(passedTests[i].LastName, passedTests[i].FirstName, passedTests[i].Group, passedTests[i].Theme,
-                    passedTests[i].Balls, passedTests[i].Assessment, passedTests[i].PassedDate);
+                dataGridView1.DataSource = context.PassedTests.ToList();
             }
         }
     }

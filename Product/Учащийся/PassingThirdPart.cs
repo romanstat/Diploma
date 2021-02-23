@@ -87,7 +87,7 @@ namespace Product.Учащийся
                 var answers = _currentAnswers.Select(c => c[1]).OrderBy(c => Guid.NewGuid()).ToArray();
 
                 Graphics g = CreateGraphics();
-                Font font = new Font("Times New Roman", 16);
+                Font font = new Font("Comic Sans MS", 20);
                 var comboBoxWidth = (int)g.MeasureString(answers.OrderByDescending(a => a.Length).First(), font).Width;
                 var maxSizeOfQuestions = (int)g.MeasureString(_currentAnswers.Select(c => c[0]).OrderByDescending(a => a.Length).First(), font).Width;
 

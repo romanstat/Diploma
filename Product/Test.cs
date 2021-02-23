@@ -22,6 +22,8 @@ namespace Product
 
         public int NumberOfQuestionsOfThirdPart { get; set; } = 0;
 
+        public string PathToMaterial { get; set; }
+
         public string Theme
         {
             get => _theme;

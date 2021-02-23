@@ -5,7 +5,7 @@ namespace Product
     public class Student
     {
         string lastName, firstName, group;
-
+            
         public string LastName
         {
             get => lastName;

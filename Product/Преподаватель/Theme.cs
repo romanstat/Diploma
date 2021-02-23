@@ -9,6 +9,7 @@ namespace Product
     {
         private readonly ListBox _themes;
         private readonly List<Test> _tests;
+        private string pathToMaterial;
 
         public Theme(ref ListBox themes, ref List<Test> tests)
         {
@@ -49,12 +50,23 @@ namespace Product
                     test.AddRangeThirdPart(addTests[i]._questionThirdPart.Keys.ToList(), addTests[i]._questionThirdPart.Values.ToList());
                 }
 
+                test.PathToMaterial = pathToMaterial;
                 test.NumberOfQuestionsOfFirstPart = test._questionFirstPart.Count;
                 test.NumberOfQuestionsOfSecondPart = test._questionSecondPart.Count;
                 test.NumberOfQuestionsOfThirdPart = test._questionThirdPart.Count;
                 _tests.Add(test);
                 Close();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pathToMaterial = openFileDialog1.FileName;
+            }
+
+            pictureBox1.BackgroundImage = Properties.Resources.icons8_скачать_64;
         }
     }
 }

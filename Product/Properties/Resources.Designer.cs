@@ -103,6 +103,26 @@ namespace Product.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_скачать_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-скачать-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_скачать_64__2_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8_скачать_64__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_студент_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-студент-80", resourceCulture);
