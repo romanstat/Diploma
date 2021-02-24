@@ -1,6 +1,7 @@
 ﻿using Product.Учащийся;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -57,6 +58,16 @@ namespace Product
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var selectedIndex = listBox1.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                Process.Start($"{_tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial}");
             }
         }
     }

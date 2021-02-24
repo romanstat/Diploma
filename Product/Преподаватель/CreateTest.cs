@@ -1,5 +1,7 @@
 ﻿using Product.Преподаватель;
 using System;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Product
@@ -7,6 +9,7 @@ namespace Product
     public partial class CreateTest : Form
     {
         private Test _test;
+        private readonly string[] FileExtensions = { ".txt", ".docx", ".pdf" };
 
         public CreateTest(ref Test test)
         {
@@ -14,6 +17,15 @@ namespace Product
             _test = test;
             textBox1.Text = test.Theme;
             UpdateMaximumOfQuestions();
+
+            if (string.IsNullOrWhiteSpace(_test.PathToMaterial))
+            {
+                pictureBox1.BackgroundImage = Properties.Resources.icons8_скачать_64__2_;
+            }
+            else
+            {
+                pictureBox1.BackgroundImage = Properties.Resources.icons8_скачать_64;
+            }
 
             numericUpDown1.Value = _test.PassingTime;
             numericUpDown2.Value = _test.NumberOfQuestionsOfFirstPart;
@@ -75,6 +87,23 @@ namespace Product
             numericUpDown2.Maximum = _test._questionFirstPart.Count;
             numericUpDown3.Maximum = _test._questionSecondPart.Count;
             numericUpDown4.Maximum = _test._questionThirdPart.Count;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var filename = openFileDialog1.FileName;
+
+                if (FileExtensions.Contains(Path.GetExtension(filename)))
+                {
+                    _test.PathToMaterial = filename;
+                    pictureBox1.BackgroundImage = Properties.Resources.icons8_скачать_64;
+                    return;
+                }
+
+                MessageBox.Show($"Доступные расширения {string.Join(" ", FileExtensions)}");
+            }
         }
     }
 }
