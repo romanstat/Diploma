@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,6 +11,7 @@ namespace Product
         private readonly ListBox _themes;
         private readonly List<Test> _tests;
         private string pathToMaterial;
+        private readonly string[] FileExtensions = { ".txt", ".docx", ".pdf" };
 
         public Theme(ref ListBox themes, ref List<Test> tests)
         {
@@ -63,10 +65,17 @@ namespace Product
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pathToMaterial = openFileDialog1.FileName;
-            }
+                var filename = openFileDialog1.FileName;
 
-            pictureBox1.BackgroundImage = Properties.Resources.icons8_скачать_64;
+                if (FileExtensions.Contains(Path.GetExtension(filename)))
+                {
+                    pathToMaterial = filename;
+                    pictureBox1.BackgroundImage = Properties.Resources.icons8_скачать_64;
+                    return;
+                }
+
+                MessageBox.Show($"Доступные расширения {string.Join(" ", FileExtensions)}");
+            }
         }
     }
 }
