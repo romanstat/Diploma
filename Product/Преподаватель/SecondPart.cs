@@ -29,12 +29,12 @@ namespace Product.Преподаватель
 
             try
             {
-                _test.AddSecondPart(textBox1.Text, textBox2.Text.Split(new char[] { ',', ';', '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries).ToList());
+                _test.AddSecondPart(textBox1.Text, textBox2.Text);
                 listBox1.Items.Add(textBox1.Text);
                 textBox1.Clear();
                 textBox2.Clear();
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

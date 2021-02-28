@@ -18,9 +18,9 @@ namespace Product
             InitializeComponent();
             try
             {
-                using (FileStream fs1 = new FileStream("tests.dat", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream("tests.dat", FileMode.OpenOrCreate))
                 {
-                    _tests = new BinaryFormatter().Deserialize(fs1) as List<Test>;
+                    _tests = new BinaryFormatter().Deserialize(fs) as List<Test>;
                     UpdateThemesList();
                 }
             }
@@ -32,7 +32,14 @@ namespace Product
 
         private void TeacherMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            File.Delete("tests.dat");
+
             using (FileStream fs = new FileStream("tests.dat", FileMode.OpenOrCreate))
+            {
+                new BinaryFormatter().Serialize(fs, _tests);
+            }
+
+            using (FileStream fs = new FileStream("backup.dat", FileMode.OpenOrCreate))
             {
                 new BinaryFormatter().Serialize(fs, _tests);
             }
@@ -139,6 +146,7 @@ namespace Product
             {
                 MessageBox.Show(ex.Message);
             }
+
             UpdateThemesList();
             Show();
         }
@@ -148,8 +156,9 @@ namespace Product
             int indexOfTheme = listBox1.SelectedIndex;
             if (indexOfTheme != -1)
             {
-                File.Delete($"{Environment.CurrentDirectory}\\{listBox1.Items[indexOfTheme]}.docx");
-                _tests.Remove(_tests.First(f => f.Theme == listBox1.Items[indexOfTheme].ToString()));
+                Test test = _tests.First(f => f.Theme == listBox1.Items[indexOfTheme].ToString());
+                File.Delete(test.PathToMaterial);
+                _tests.Remove(test);
                 listBox1.Items.RemoveAt(indexOfTheme);
             }
             else
@@ -164,9 +173,9 @@ namespace Product
             {
                 await Task.Run(() => new StudentResults().ShowDialog());
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Тесты не проходили");
+                MessageBox.Show(ex.Message);
             }
         }
     }

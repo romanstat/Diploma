@@ -42,7 +42,7 @@ namespace Product.Преподаватель
                 textBox1.Clear();
                 textBox2.Clear();
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

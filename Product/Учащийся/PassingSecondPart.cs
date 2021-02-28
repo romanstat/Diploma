@@ -12,7 +12,7 @@ namespace Product.Учащийся
         private readonly Test _test;
         private readonly List<string> _questionsSecondPart;
         private string _currentQuestion;
-        private List<string> _currentAnswers;
+        private string _currentAnswer;
         private readonly Dictionary<string, bool> _result = new Dictionary<string, bool>();
         private readonly DateTime _endOfTest;
 
@@ -38,7 +38,7 @@ namespace Product.Учащийся
         {
             var answer = textBox1.Text;
 
-            if (_currentAnswers.Any(c => string.Equals(c, answer, StringComparison.OrdinalIgnoreCase)))
+            if (string.Equals(_currentAnswer, answer, StringComparison.OrdinalIgnoreCase))
             {
                 _numberOfPoints += 2;
                 _result.Add(_currentQuestion, true);
@@ -62,7 +62,7 @@ namespace Product.Учащийся
             else
             {
                 _currentQuestion = _questionsSecondPart[_numberOfQuestion];
-                _currentAnswers = _test._questionSecondPart[_currentQuestion];
+                _currentAnswer = _test._questionSecondPart[_currentQuestion];
 
                 label1.Text = $"Вопрос №{_numberOfQuestion + 1}";
                 label2.Text = _currentQuestion;

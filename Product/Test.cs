@@ -10,7 +10,7 @@ namespace Product
 
         public Dictionary<string, List<string>> _questionFirstPart = new Dictionary<string, List<string>>();
 
-        public Dictionary<string, List<string>> _questionSecondPart = new Dictionary<string, List<string>>();
+        public Dictionary<string, string> _questionSecondPart = new Dictionary<string, string>();
 
         public Dictionary<string, List<string[]>> _questionThirdPart = new Dictionary<string, List<string[]>>();
 
@@ -70,7 +70,7 @@ namespace Product
             }
         }
 
-        public void AddSecondPart(string question, List<string> answer)
+        public void AddSecondPart(string question, string answer)
         {
             if (!_questionSecondPart.ContainsKey(question))
             {
@@ -82,7 +82,7 @@ namespace Product
             }
         }
 
-        public void AddRangeSecondPart(List<string> questions, List<List<string>> listAnswers)
+        public void AddRangeSecondPart(List<string> questions, List<string> listAnswers)
         {
             for (int i = 0; i < questions.Count; i++)
             {

@@ -12,7 +12,7 @@ namespace Product.Преподаватель
 
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                dataGridView1.DataSource = context.PassedTests.ToList();
+                dataGridView1.DataSource = context.PassedTests.OrderBy(p => p.PassedDate).ToList();
             }
         }
     }

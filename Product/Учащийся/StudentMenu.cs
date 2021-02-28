@@ -46,7 +46,6 @@ namespace Product
             if (selectedIndex == -1)
             {
                 MessageBox.Show("Не выбран вопрос");
-
                 return;
             }
 
@@ -75,6 +74,11 @@ namespace Product
             OpenTest();
         }
 
+        private void пройтиПроверочныйТестToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            OpenTest();
+        }
+
         private void открытьУчебныйМатериалToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             var selectedIndex = listBox1.SelectedIndex;
@@ -90,11 +94,6 @@ namespace Product
             {
                 MessageBox.Show("Файл с учебным материалом отсутствует");
             }
-        }
-
-        private void пройтиПроверочныйТестToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            OpenTest();
         }
     }
 }
