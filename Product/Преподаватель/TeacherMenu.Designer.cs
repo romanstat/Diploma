@@ -50,10 +50,11 @@
             this.listBox1.BackColor = System.Drawing.SystemColors.Window;
             this.listBox1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 38;
-            this.listBox1.Location = new System.Drawing.Point(104, 160);
+            this.listBox1.Location = new System.Drawing.Point(106, 148);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1069, 498);
+            this.listBox1.Size = new System.Drawing.Size(1069, 536);
             this.listBox1.TabIndex = 0;
             this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
@@ -116,7 +117,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(475, 94);
+            this.label1.Location = new System.Drawing.Point(475, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 45);
             this.label1.TabIndex = 6;
@@ -128,7 +129,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Product.Properties.Resources.icons8_вопросы_64;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(697, 84);
+            this.pictureBox1.Location = new System.Drawing.Point(697, 61);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.TabIndex = 7;
@@ -141,7 +142,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::Product.Properties.Resources._1593666815_56_p_neitralnii_fon_66;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1280, 707);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);

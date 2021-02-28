@@ -37,37 +37,58 @@ namespace Product
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            var selectedIndex = listBox1.SelectedIndex;
-            if (selectedIndex == -1)
-            {
-                MessageBox.Show("Не выбран вопрос");
-                return;
-            }
-
-            try
-            {
-                Hide();
-                Test test = _tests.First(s => s.Theme == listBox1.Items[selectedIndex].ToString());
-                new PassingFirstPart(test, _student).ShowDialog();
-                Show();
-            }
-            catch (ObjectDisposedException)
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            OpenTest();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var selectedIndex = listBox1.SelectedIndex;
 
-            if (selectedIndex != -1)
+            try
             {
-                Process.Start($"{_tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial}");
+                if (selectedIndex != -1)
+                {
+                    Process.Start($"{_tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial}");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Файл с учебным материалом отсутствует");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenTest();
+        }
+
+        private void OpenTest()
+        {
+            var selectedIndex = listBox1.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("Не выбран вопрос");
+
+                return;
+            }
+
+            try
+            {
+                Test test = _tests.First(s => s.Theme == listBox1.Items[selectedIndex].ToString());
+                if (test.NumberOfQuestionsOfFirstPart == 0 && test.NumberOfQuestionsOfSecondPart == 0 && test.NumberOfQuestionsOfThirdPart == 0)
+                {
+                    MessageBox.Show("Тест отсутствует");
+                }
+                else
+                {
+                    Hide();
+                    new PassingFirstPart(test, _student).ShowDialog();
+                    Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

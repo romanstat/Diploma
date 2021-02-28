@@ -22,7 +22,7 @@ namespace Product.Преподаватель
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox5.Text))
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox4.Text))
             {
                 MessageBox.Show("Поля не заполнены");
                 return;
@@ -30,17 +30,17 @@ namespace Product.Преподаватель
 
             try
             {
-                List<string[]> answers = new List<string[]>();
-                List<string> leftMatching = new List<string>();
-                List<string> rightMatching = new List<string>();
+                var answers = new List<string[]>();
+                var leftMatching = new List<string>();
+                var rightMatching = new List<string>();
+                var matches = textBox4.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                leftMatching.AddRange(textBox4.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList());
-                rightMatching.AddRange(textBox5.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList());
+                leftMatching.AddRange(matches.Select(s => s.Split('-')[0]));
+                rightMatching.AddRange(matches.Select(s => s.Split('-')[1]));
 
-                if (leftMatching.Count != rightMatching.Count)
+                if (leftMatching.Count != rightMatching.Count || leftMatching.Any(m => string.IsNullOrWhiteSpace(m)) || rightMatching.Any(m => string.IsNullOrWhiteSpace(m)))
                 {
-                    MessageBox.Show("Не хватает соответствий");
-                    return;
+                    throw new Exception();
                 }
 
                 for (int i = 0; i < leftMatching.Count; i++)
@@ -52,11 +52,10 @@ namespace Product.Преподаватель
                 listBox1.Items.Add(textBox1.Text);
                 textBox1.Clear();
                 textBox4.Clear();
-                textBox5.Clear();
             }
-            catch (ArgumentException ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Не правильно составлены соответствия");
             }
         }
 
@@ -72,8 +71,7 @@ namespace Product.Преподаватель
             textBox1.Text = listBox1.Items[selectedIndex].ToString();
             for (int i = 0; i < _test._questionThirdPart[textBox1.Text].Count; i++)
             {
-                textBox4.Text += $"{_test._questionThirdPart[textBox1.Text][i][0]}\r\n";
-                textBox5.Text += $"{_test._questionThirdPart[textBox1.Text][i][1]}\r\n";
+                textBox4.Text += $"{_test._questionThirdPart[textBox1.Text][i][0]} - {_test._questionThirdPart[textBox1.Text][i][1]}\r\n";
             }
 
             _test.RemoveThirdPart(textBox1.Text);
@@ -91,13 +89,6 @@ namespace Product.Преподаватель
 
             _test.RemoveThirdPart(listBox1.Items[selectedIndex].ToString());
             listBox1.Items.RemoveAt(selectedIndex);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
         }
     }
 }

@@ -30,7 +30,6 @@ namespace Product.Учащийся
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,24 +38,16 @@ namespace Product.Учащийся
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 38);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(429, 150);
+            this.textBox1.Location = new System.Drawing.Point(429, 295);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(687, 45);
             this.textBox1.TabIndex = 4;
@@ -66,7 +57,7 @@ namespace Product.Учащийся
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(5, 153);
+            this.label3.Location = new System.Drawing.Point(5, 298);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(403, 38);
             this.label3.TabIndex = 5;
@@ -78,7 +69,7 @@ namespace Product.Учащийся
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(30, 243);
+            this.button1.Location = new System.Drawing.Point(30, 388);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 59);
             this.button1.TabIndex = 6;
@@ -92,7 +83,7 @@ namespace Product.Учащийся
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(721, 9);
+            this.label4.Location = new System.Drawing.Point(715, 409);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(266, 38);
             this.label4.TabIndex = 7;
@@ -105,7 +96,7 @@ namespace Product.Учащийся
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(993, 9);
+            this.label5.Location = new System.Drawing.Point(987, 409);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 38);
             this.label5.TabIndex = 8;
@@ -121,9 +112,9 @@ namespace Product.Учащийся
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(12, 54);
+            this.panel1.Location = new System.Drawing.Point(52, 130);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(960, 65);
+            this.panel1.Size = new System.Drawing.Size(1006, 65);
             this.panel1.TabIndex = 9;
             // 
             // label2
@@ -136,6 +127,28 @@ namespace Product.Учащийся
             this.label2.TabIndex = 7;
             this.label2.Text = "label2";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(428, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 38);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Вопрос №31";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::Product.Properties.Resources.icons8_вопросительный_знак_64;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(612, 32);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            // 
             // PassingSecondPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,7 +156,8 @@ namespace Product.Учащийся
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::Product.Properties.Resources._1593666815_56_p_neitralnii_fon_66;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1134, 314);
+            this.ClientSize = new System.Drawing.Size(1152, 640);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -158,14 +172,13 @@ namespace Product.Учащийся
             this.Text = "PassingSecondPart";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
@@ -174,5 +187,7 @@ namespace Product.Учащийся
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

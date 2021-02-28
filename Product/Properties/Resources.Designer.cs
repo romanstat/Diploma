@@ -73,6 +73,16 @@ namespace Product.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_menu_squared_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-menu-squared-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_академический_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-академический-80", resourceCulture);
@@ -93,9 +103,49 @@ namespace Product.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_вопросительный_знак_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-вопросительный-знак-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_вопросы_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-вопросы-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_группа_вопросов_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-группа-вопросов-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_редактировать_свойство_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-редактировать-свойство-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_результаты_теста_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-результаты-теста-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +173,39 @@ namespace Product.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_сложение_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-сложение-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_студент_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-студент-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_тест_частично_пройден_80 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-тест-частично-пройден-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zelenyi_fon_tekstura_abstract_background_green_color {
+            get {
+                object obj = ResourceManager.GetObject("zelenyi-fon-tekstura-abstract-background-green-color", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

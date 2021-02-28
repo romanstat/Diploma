@@ -87,6 +87,10 @@ namespace Product
             numericUpDown2.Maximum = _test._questionFirstPart.Count;
             numericUpDown3.Maximum = _test._questionSecondPart.Count;
             numericUpDown4.Maximum = _test._questionThirdPart.Count;
+
+            label10.Text = $"из {_test._questionFirstPart.Count}";
+            label11.Text = $"из {_test._questionSecondPart.Count}";
+            label12.Text = $"из {_test._questionThirdPart.Count}";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -29,14 +29,6 @@ namespace Product.Учащийся
         {
             InitializeComponent();
             _test = test;
-
-            if (_test.NumberOfQuestionsOfFirstPart == 0 && _test.NumberOfQuestionsOfSecondPart == 0 && _test.NumberOfQuestionsOfThirdPart == 0)
-            {
-                MessageBox.Show("Тесты отсутствуют");
-                Close();
-                return;
-            }
-
             _student = student;
             _questionsFirstPart = _test._questionFirstPart.Keys.OrderBy(g => Guid.NewGuid()).Take(_test.NumberOfQuestionsOfFirstPart).ToList();
             _questionsSecondPart = _test._questionSecondPart.Keys.OrderBy(g => Guid.NewGuid()).Take(_test.NumberOfQuestionsOfSecondPart).ToList();
