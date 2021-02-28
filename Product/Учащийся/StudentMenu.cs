@@ -40,28 +40,6 @@ namespace Product
             OpenTest();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            var selectedIndex = listBox1.SelectedIndex;
-
-            try
-            {
-                if (selectedIndex != -1)
-                {
-                    Process.Start($"{_tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial}");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Файл с учебным материалом отсутствует");
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            OpenTest();
-        }
-
         private void OpenTest()
         {
             var selectedIndex = listBox1.SelectedIndex;
@@ -90,6 +68,33 @@ namespace Product
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void пройтиПроверочныйТестToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenTest();
+        }
+
+        private void открытьУчебныйМатериалToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var selectedIndex = listBox1.SelectedIndex;
+
+            try
+            {
+                if (selectedIndex != -1)
+                {
+                    Process.Start($"{_tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial}");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Файл с учебным материалом отсутствует");
+            }
+        }
+
+        private void пройтиПроверочныйТестToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            OpenTest();
         }
     }
 }
