@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Product.Учащийся
@@ -13,10 +12,10 @@ namespace Product.Учащийся
         private readonly List<string> _questionsSecondPart;
         private string _currentQuestion;
         private string _currentAnswer;
-        private readonly Dictionary<string, bool> _result = new Dictionary<string, bool>();
+        private readonly List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>();
         private readonly DateTime _endOfTest;
 
-        public PassingSecondPart(Test test, List<string> questionsSecondPart, int numberOfPoints, DateTime endOfTest, Dictionary<string, bool> result)
+        public PassingSecondPart(Test test, List<string> questionsSecondPart, int numberOfPoints, DateTime endOfTest, List<Tuple<string, bool, string, string>> result)
         {
             InitializeComponent();
             _test = test;
@@ -28,24 +27,25 @@ namespace Product.Учащийся
             Passing();
         }
 
-        public void Deconstruct(out Dictionary<string, bool> ResultOfSecondPart, out int numberOfPoints)
+        public void Deconstruct(out List<Tuple<string, bool, string, string>> ResultOfSecondPart, out int NumberOfPoints)
         {
             ResultOfSecondPart = _result;
-            numberOfPoints = _numberOfPoints;
+            NumberOfPoints = _numberOfPoints;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var answer = textBox1.Text;
+            var selectedAnswer = textBox1.Text;
+            var correctAnswer = _test._questionSecondPart.
 
-            if (string.Equals(_currentAnswer, answer, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(_currentAnswer, selectedAnswer, StringComparison.OrdinalIgnoreCase))
             {
                 _numberOfPoints += 2;
-                _result.Add(_currentQuestion, true);
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, true, _currentAnswer, selectedAnswer));
             }
             else
             {
-                _result.Add(_currentQuestion, false);
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, false, _currentAnswer, selectedAnswer));
             }
 
             textBox1.Clear();
@@ -57,6 +57,7 @@ namespace Product.Учащийся
         {
             if (_questionsSecondPart.Count == _numberOfQuestion)
             {
+                timer1.Stop();
                 Close();
             }
             else

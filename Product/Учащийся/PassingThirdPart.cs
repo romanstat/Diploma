@@ -16,9 +16,9 @@ namespace Product.Учащийся
         private readonly List<string> _questionsThirdPart;
         private string _currentQuestion;
         private List<string[]> _currentAnswers;
-        private readonly Dictionary<string, bool> _result = new Dictionary<string, bool>();
+        private List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>>();
 
-        public PassingThirdPart(Test test, List<string> questionsThirdPart, int numberOfPoints, DateTime endOfTest, Dictionary<string, bool> result)
+        public PassingThirdPart(Test test, List<string> questionsThirdPart, int numberOfPoints, DateTime endOfTest, List<Tuple<string, bool, string, string>> result)
         {
             InitializeComponent();
             _test = test;
@@ -30,7 +30,7 @@ namespace Product.Учащийся
             Passing();
         }
 
-        public void Deconstruct(out Dictionary<string, bool> ResultOfThirdPart, out int numberOfPoints)
+        public void Deconstruct(out List<Tuple<string, bool, string, string>> ResultOfThirdPart, out int numberOfPoints)
         {
             ResultOfThirdPart = _result;
             numberOfPoints = _numberOfPoints;
@@ -67,17 +67,17 @@ namespace Product.Учащийся
 
         private void Passing()
         {
-            panel1.Controls.Clear();
-            AutoSize = false;
-            Size = new Size(1000, 272);
-            AutoSize = true;
-
             if (_questionsThirdPart.Count == _numberOfQuestion)
             {
                 Close();
             }
             else
             {
+                panel1.Controls.Clear();
+                AutoSize = false;
+                Size = new Size(1200, 432);
+                AutoSize = true;
+
                 _currentQuestion = _questionsThirdPart[_numberOfQuestion];
                 _currentAnswers = _test._questionThirdPart[_currentQuestion];
 
@@ -120,7 +120,7 @@ namespace Product.Учащийся
                     panel1.Controls.Add(comboBox);
                 }
 
-                Height += button1.Height + 15;
+                Height += button1.Height + 35;
                 CenterToScreen();
             }
         }

@@ -47,9 +47,9 @@ namespace Product.Учащийся
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(429, 295);
+            this.textBox1.Location = new System.Drawing.Point(42, 286);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(687, 45);
+            this.textBox1.Size = new System.Drawing.Size(1106, 45);
             this.textBox1.TabIndex = 4;
             // 
             // label3
@@ -57,11 +57,11 @@ namespace Product.Учащийся
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(5, 298);
+            this.label3.Location = new System.Drawing.Point(35, 233);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(403, 38);
+            this.label3.Size = new System.Drawing.Size(211, 38);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Введите свой вариант ответа:";
+            this.label3.Text = "Введите ответ:";
             // 
             // button1
             // 
@@ -69,9 +69,9 @@ namespace Product.Учащийся
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(30, 388);
+            this.button1.Location = new System.Drawing.Point(45, 354);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 59);
+            this.button1.Size = new System.Drawing.Size(168, 53);
             this.button1.TabIndex = 6;
             this.button1.Text = "Ответить";
             this.button1.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@ namespace Product.Учащийся
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(715, 409);
+            this.label4.Location = new System.Drawing.Point(747, 369);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(266, 38);
             this.label4.TabIndex = 7;
@@ -96,7 +96,7 @@ namespace Product.Учащийся
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(987, 409);
+            this.label5.Location = new System.Drawing.Point(1019, 369);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 38);
             this.label5.TabIndex = 8;
@@ -112,9 +112,9 @@ namespace Product.Учащийся
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(52, 130);
+            this.panel1.Location = new System.Drawing.Point(42, 130);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1006, 65);
+            this.panel1.Size = new System.Drawing.Size(1101, 74);
             this.panel1.TabIndex = 9;
             // 
             // label2
@@ -131,10 +131,10 @@ namespace Product.Учащийся
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(428, 51);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(451, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 38);
+            this.label1.Size = new System.Drawing.Size(213, 45);
             this.label1.TabIndex = 2;
             this.label1.Text = "Вопрос №31";
             // 
@@ -143,7 +143,7 @@ namespace Product.Учащийся
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::Product.Properties.Resources.icons8_вопросительный_знак_64;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(612, 32);
+            this.pictureBox2.Location = new System.Drawing.Point(657, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(70, 70);
             this.pictureBox2.TabIndex = 21;
@@ -156,7 +156,7 @@ namespace Product.Учащийся
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::Product.Properties.Resources._1593666815_56_p_neitralnii_fon_66;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1152, 640);
+            this.ClientSize = new System.Drawing.Size(1184, 438);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);

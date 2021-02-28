@@ -8,12 +8,12 @@ namespace Product.Учащийся
 {
     public partial class Result : Form
     {
-        public Result(double allBalls, int numberOfPoints, double studentAssessment, DateTime startDate, Dictionary<string, bool> result)
+        public Result(double allBalls, int numberOfPoints, double studentAssessment, DateTime startDate, DateTime finishedDate, Dictionary<string, bool> result)
         {
             InitializeComponent();
 
             label1.Text = $"Начат: {startDate}";
-            label2.Text = $"Закончен: {DateTime.Now}";
+            label2.Text = $"Закончен: {finishedDate}";
             label3.Text = $"Баллы: {numberOfPoints}/{allBalls}";
             label4.Text = $"Оценка: {studentAssessment}/10";
 

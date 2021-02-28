@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Product.Учащийся
@@ -12,16 +11,15 @@ namespace Product.Учащийся
     {
         private readonly Test _test;
         private readonly Student _student;
-        private int _numberOfQuestion = 0;
-        private int _numberOfPoints = 0;
-        private readonly double _allBalls = 0;
         private readonly List<string> _questionsFirstPart = new List<string>();
         private readonly List<string> _questionsSecondPart = new List<string>();
         private readonly List<string> _questionsThirdPart = new List<string>();
+        private List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>>();
         private string _currentQuestion;
         private List<string> _currentAnswers;
-        //bool, hisanswer, correct answer 
-        private Dictionary<string, bool> _result = new Dictionary<string, bool>();
+        private int _numberOfQuestion = 0;
+        private int _numberOfPoints = 0;
+        private readonly double _allBalls = 0;
         private readonly DateTime _endOfTest;
         private readonly DateTime _startOfTest;
 
@@ -55,11 +53,11 @@ namespace Product.Учащийся
             if (corretAnswer == selectedAnswer)
             {
                 _numberOfPoints += 1;
-                _result.Add(_currentQuestion, true);
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, true, corretAnswer, selectedAnswer));
             }
             else
             {
-                _result.Add(_currentQuestion, false);
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, false, corretAnswer, selectedAnswer));
             }
 
             listBox1.Items.Clear();
@@ -67,7 +65,7 @@ namespace Product.Учащийся
             Passing();
         }
 
-        private async void Passing()
+        private void Passing()
         {
             if (_questionsFirstPart.Count == _numberOfQuestion)
             {
@@ -87,29 +85,7 @@ namespace Product.Учащийся
                     thirdPart.Deconstruct(out _result, out _numberOfPoints);
                 }
 
-                timer1.Stop();
-
-                var studentAssessment = Math.Round(_numberOfPoints / _allBalls * 10.0, 2);
-
-                var result = new Result(_allBalls, _numberOfPoints, studentAssessment, _startOfTest, _result);
-                result.ShowDialog();
-
-                using (ApplicationDbContext context = new ApplicationDbContext())
-                {
-                    var passedTest = new PassedTest()
-                    {
-                        FirstName = _student.FirstName,
-                        LastName = _student.LastName,
-                        Group = _student.Group,
-                        Theme = _test.Theme,
-                        Assessment = $"Оценка: {studentAssessment}/10",
-                        Balls = $"Баллы: {_numberOfPoints}/{_allBalls}",
-                        PassedDate = DateTime.Now,
-                    };
-
-                    await context.PassedTests.AddAsync(passedTest);
-                    await context.SaveChangesAsync();
-                }
+                ShowResult();
 
                 Close();
             }
@@ -132,7 +108,7 @@ namespace Product.Учащийся
 
             if (time.TotalSeconds > 0)
             {
-                timer1.Stop();
+                Hide();
                 ShowResult();
                 Close();
             }
@@ -147,8 +123,29 @@ namespace Product.Учащийся
 
         private void ShowResult()
         {
+            timer1.Stop();
             var studentAssessment = Math.Round(_numberOfPoints / _allBalls * 10.0, 2);
-            MessageBox.Show($"Количество баллов: {_numberOfPoints}/{_allBalls}\nОценка: {studentAssessment}");
+            var finishedDate = DateTime.Now;
+
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                var passedTest = new PassedTest()
+                {
+                    FirstName = _student.FirstName,
+                    LastName = _student.LastName,
+                    Group = _student.Group,
+                    Theme = _test.Theme,
+                    Assessment = $"Оценка: {studentAssessment}/10",
+                    Balls = $"Баллы: {_numberOfPoints}/{_allBalls}",
+                    PassedDate = finishedDate,
+                };
+
+                context.PassedTests.Add(passedTest);
+                context.SaveChanges();
+            }
+
+            var result = new Result(_allBalls, _numberOfPoints, studentAssessment, _startOfTest, finishedDate, _result);
+            result.ShowDialog();
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
@@ -166,11 +163,11 @@ namespace Product.Учащийся
             if (corretAnswer == selectedAnswer)
             {
                 _numberOfPoints += 1;
-                _result.Add(_currentQuestion, true);
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, true, corretAnswer, selectedAnswer));
             }
             else
             {
-                _result.Add(_currentQuestion, false);
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, false, corretAnswer, selectedAnswer));
             }
 
             listBox1.Items.Clear();
