@@ -157,7 +157,6 @@ namespace Product
             if (indexOfTheme != -1)
             {
                 Test test = _tests.First(f => f.Theme == listBox1.Items[indexOfTheme].ToString());
-                File.Delete(test.PathToMaterial);
                 _tests.Remove(test);
                 listBox1.Items.RemoveAt(indexOfTheme);
             }

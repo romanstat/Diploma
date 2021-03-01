@@ -11,8 +11,8 @@ namespace Product.Учащийся
         private readonly Test _test;
         private readonly List<string> _questionsSecondPart;
         private string _currentQuestion;
-        private string _currentAnswer;
-        private readonly List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>();
+        private string _correctAnswer;
+        private List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>>();
         private readonly DateTime _endOfTest;
 
         public PassingSecondPart(Test test, List<string> questionsSecondPart, int numberOfPoints, DateTime endOfTest, List<Tuple<string, bool, string, string>> result)
@@ -36,16 +36,15 @@ namespace Product.Учащийся
         private void button1_Click(object sender, EventArgs e)
         {
             var selectedAnswer = textBox1.Text;
-            var correctAnswer = _test._questionSecondPart.
 
-            if (string.Equals(_currentAnswer, selectedAnswer, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(_correctAnswer, selectedAnswer, StringComparison.OrdinalIgnoreCase))
             {
                 _numberOfPoints += 2;
-                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, true, _currentAnswer, selectedAnswer));
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, true, _correctAnswer, selectedAnswer));
             }
             else
             {
-                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, false, _currentAnswer, selectedAnswer));
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, false, _correctAnswer, selectedAnswer));
             }
 
             textBox1.Clear();
@@ -63,7 +62,7 @@ namespace Product.Учащийся
             else
             {
                 _currentQuestion = _questionsSecondPart[_numberOfQuestion];
-                _currentAnswer = _test._questionSecondPart[_currentQuestion];
+                _correctAnswer = _test._questionSecondPart[_currentQuestion];
 
                 label1.Text = $"Вопрос №{_numberOfQuestion + 1}";
                 label2.Text = _currentQuestion;

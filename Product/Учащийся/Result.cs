@@ -8,7 +8,7 @@ namespace Product.Учащийся
 {
     public partial class Result : Form
     {
-        public Result(double allBalls, int numberOfPoints, double studentAssessment, DateTime startDate, DateTime finishedDate, Dictionary<string, bool> result)
+        public Result(double allBalls, int numberOfPoints, double studentAssessment, DateTime startDate, DateTime finishedDate, List<Tuple<string, bool, string, string>> result)
         {
             InitializeComponent();
 
@@ -17,8 +17,8 @@ namespace Product.Учащийся
             label3.Text = $"Баллы: {numberOfPoints}/{allBalls}";
             label4.Text = $"Оценка: {studentAssessment}/10";
 
-            var questions = result.Keys.ToList();
-            var answers = result.Values.ToList();
+            var questions = result.Select(r => r.Item1).ToList();
+            var answers = result.Select(r => r.Item2).ToList();
 
             for (int i = 0; i < result.Count; i++)
             {
@@ -36,12 +36,18 @@ namespace Product.Учащийся
             }
 
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            StudentResult = result;
         }
+
+        private List<Tuple<string, bool, string, string>> StudentResult { get; }
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             var selectedItem = listView1.SelectedItems[0].Text;
-            MessageBox.Show(selectedItem);
+
+            var result = StudentResult.First(s => s.Item1 == selectedItem);
+
+            MessageBox.Show($"Правильный вариант:\n{result.Item3}\n\nВаш вариант:\n{result.Item4}");
         }
     }
 }

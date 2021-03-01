@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Product.Учащийся
@@ -22,6 +21,7 @@ namespace Product.Учащийся
         private readonly double _allBalls = 0;
         private readonly DateTime _endOfTest;
         private readonly DateTime _startOfTest;
+        private bool IsPassed = false;
 
         public PassingFirstPart(Test test, Student student)
         {
@@ -119,11 +119,20 @@ namespace Product.Учащийся
         private void PassingFirstPart_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Stop();
+            ShowResult();
         }
 
         private void ShowResult()
         {
             timer1.Stop();
+
+            if (IsPassed)
+            {
+                return;
+            }
+
+            IsPassed = true;
+
             var studentAssessment = Math.Round(_numberOfPoints / _allBalls * 10.0, 2);
             var finishedDate = DateTime.Now;
 

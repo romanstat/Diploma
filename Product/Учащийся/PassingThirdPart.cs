@@ -17,6 +17,7 @@ namespace Product.Учащийся
         private string _currentQuestion;
         private List<string[]> _currentAnswers;
         private List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>>();
+        private bool IsCorrectQuestion = true;
 
         public PassingThirdPart(Test test, List<string> questionsThirdPart, int numberOfPoints, DateTime endOfTest, List<Tuple<string, bool, string, string>> result)
         {
@@ -39,6 +40,7 @@ namespace Product.Учащийся
         private void button1_Click(object sender, EventArgs e)
         {
             var comboBoxes = panel1.Controls.OfType<ComboBox>().ToList();
+
             for (int i = 0; i < comboBoxes.Count(); i++)
             {
                 var answer = comboBoxes[i].SelectedItem?.ToString();
@@ -49,18 +51,26 @@ namespace Product.Учащийся
                 }
                 else
                 {
-                    if (!_result.ContainsKey(_currentQuestion))
-                    {
-                        _result.Add(_currentQuestion, false);
-                    }
+                    IsCorrectQuestion = false;
                 }
             }
 
-            if (!_result.ContainsKey(_currentQuestion))
+            var questions = _test._questionThirdPart[_currentQuestion];
+
+            var correctAnswers = string.Join("\r\n", questions.Select(q => $"{q[0]} - {q[1]}"));
+
+            var answers = string.Join("\r\n", questions.Zip(comboBoxes, (q, a) => $"{q[0]} - {a.SelectedItem?.ToString()}"));
+
+            if (IsCorrectQuestion)
             {
-                _result.Add(_currentQuestion, true);
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, true, correctAnswers, answers));
+            }
+            else
+            {
+                _result.Add(new Tuple<string, bool, string, string>(_currentQuestion, false, correctAnswers, answers));
             }
 
+            IsCorrectQuestion = true;
             _numberOfQuestion++;
             Passing();
         }
