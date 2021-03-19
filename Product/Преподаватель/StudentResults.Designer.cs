@@ -40,8 +40,12 @@ namespace Product.Преподаватель
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.бДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.очиститьДанныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -132,6 +136,34 @@ namespace Product.Преподаватель
             this.Column14.Name = "Column14";
             this.Column14.Width = 190;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.бДToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1280, 41);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // бДToolStripMenuItem
+            // 
+            this.бДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.очиститьДанныеToolStripMenuItem});
+            this.бДToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.бДToolStripMenuItem.Name = "бДToolStripMenuItem";
+            this.бДToolStripMenuItem.Size = new System.Drawing.Size(60, 37);
+            this.бДToolStripMenuItem.Text = "БД";
+            // 
+            // очиститьДанныеToolStripMenuItem
+            // 
+            this.очиститьДанныеToolStripMenuItem.Name = "очиститьДанныеToolStripMenuItem";
+            this.очиститьДанныеToolStripMenuItem.Size = new System.Drawing.Size(289, 38);
+            this.очиститьДанныеToolStripMenuItem.Text = "Очистить данные";
+            this.очиститьДанныеToolStripMenuItem.Click += new System.EventHandler(this.очиститьДанныеToolStripMenuItem_Click);
+            // 
             // StudentResults
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 26F);
@@ -143,10 +175,12 @@ namespace Product.Преподаватель
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -154,6 +188,8 @@ namespace Product.Преподаватель
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +206,8 @@ namespace Product.Преподаватель
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem бДToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem очиститьДанныеToolStripMenuItem;
     }
 }

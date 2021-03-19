@@ -192,6 +192,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
+    <Compile Include="Background.cs" />
     <Compile Include="Преподаватель\CreateTest.cs">
       <SubType>Form</SubType>
     </Compile>

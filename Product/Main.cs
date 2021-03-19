@@ -23,5 +23,10 @@ namespace Product
             new StudentSignIn().ShowDialog();
             Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
