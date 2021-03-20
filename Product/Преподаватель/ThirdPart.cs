@@ -12,6 +12,7 @@ namespace Product.Преподаватель
         public ThirdPart(ref Test test)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _test = test;
 
             foreach (var question in test._questionThirdPart)

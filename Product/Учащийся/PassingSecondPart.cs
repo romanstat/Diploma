@@ -18,6 +18,7 @@ namespace Product.Учащийся
         public PassingSecondPart(Test test, List<string> questionsSecondPart, int numberOfPoints, DateTime endOfTest, List<Tuple<string, bool, string, string>> result)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _test = test;
             _questionsSecondPart = questionsSecondPart;
             _numberOfPoints = numberOfPoints;

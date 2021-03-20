@@ -22,6 +22,7 @@ namespace Product.Учащийся
         public PassingThirdPart(Test test, List<string> questionsThirdPart, int numberOfPoints, DateTime endOfTest, List<Tuple<string, bool, string, string>> result)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _test = test;
             _questionsThirdPart = questionsThirdPart;
             _numberOfPoints = numberOfPoints;

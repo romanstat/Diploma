@@ -9,7 +9,7 @@ namespace Product.Преподаватель
         public StudentResults()
         {
             InitializeComponent();
-
+            BackgroundImage = Background.Theme;
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
                 var result = context.PassedTests.OrderBy(p => p.PassedDate).ToList();

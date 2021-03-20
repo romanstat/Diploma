@@ -45,6 +45,7 @@ namespace Product
         {
             Hide();
             new ChooseTheme().ShowDialog();
+            BackgroundImage = Background.Theme;
             Show();
         }
 

@@ -14,6 +14,7 @@ namespace Product
         public CreateTest(ref Test test)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _test = test;
             textBox1.Text = test.Theme;
             UpdateMaximumOfQuestions();

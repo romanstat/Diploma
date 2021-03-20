@@ -16,6 +16,7 @@ namespace Product
         public TeacherMenu()
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             try
             {
                 using (FileStream fs = new FileStream("tests.dat", FileMode.OpenOrCreate))

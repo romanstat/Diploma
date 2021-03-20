@@ -16,6 +16,7 @@ namespace Product
         public Theme(ref ListBox themes, ref List<Test> tests)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _themes = themes;
             _tests = tests;
             checkedListBox1.Items.AddRange(themes.Items);

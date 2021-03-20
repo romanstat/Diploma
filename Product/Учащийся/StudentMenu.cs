@@ -17,6 +17,7 @@ namespace Product
         public StudentMenu(Student student)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _student = student;
             try
             {

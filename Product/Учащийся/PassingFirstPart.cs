@@ -26,6 +26,7 @@ namespace Product.Учащийся
         public PassingFirstPart(Test test, Student student)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _test = test;
             _student = student;
             _questionsFirstPart = _test._questionFirstPart.Keys.OrderBy(g => Guid.NewGuid()).Take(_test.NumberOfQuestionsOfFirstPart).ToList();

@@ -53,7 +53,7 @@ namespace Product.Преподаватель
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(405, 48);
+            this.label1.Location = new System.Drawing.Point(429, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(350, 45);
             this.label1.TabIndex = 3;
@@ -65,7 +65,7 @@ namespace Product.Преподаватель
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Product.Properties.Resources.icons8_результаты_теста_50;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(770, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(794, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.TabIndex = 8;

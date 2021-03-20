@@ -8,6 +8,7 @@ namespace Product
         public StudentSignIn()
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
         }
 
         private void button1_Click(object sender, EventArgs e)

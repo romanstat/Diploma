@@ -11,6 +11,7 @@ namespace Product.Преподаватель
         public FirstPart(ref Test test)
         {
             InitializeComponent();
+            BackgroundImage = Background.Theme;
             _test = test;
 
             foreach (var question in test._questionFirstPart)
