@@ -103,7 +103,7 @@ namespace Product
             }
             else
             {
-                throw new ArgumentException("Вопрос уже существует");
+                
             }
         }
 

@@ -36,8 +36,8 @@ namespace Product.Преподаватель
                 var rightMatching = new List<string>();
                 var matches = textBox4.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                leftMatching.AddRange(matches.Select(s => s.Split('-')[0]));
-                rightMatching.AddRange(matches.Select(s => s.Split('-')[1]));
+                leftMatching.AddRange(matches.Select(s => s.Split('-', '–')[0]));
+                rightMatching.AddRange(matches.Select(s => s.Split('-', '–')[1]));
 
                 if (leftMatching.Count != rightMatching.Count || leftMatching.Any(m => string.IsNullOrWhiteSpace(m)) || rightMatching.Any(m => string.IsNullOrWhiteSpace(m)))
                 {

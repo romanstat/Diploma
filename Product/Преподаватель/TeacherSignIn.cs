@@ -13,7 +13,7 @@ namespace Product
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "1" && textBox2.Text == "1")
+            if (textBox1.Text == "college" && textBox2.Text == "MRCCollegeMRC")
             {
                 Hide();
                 new TeacherMenu().ShowDialog();

@@ -98,7 +98,7 @@ namespace Product
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                var filename = openFileDialog1.FileName;
+                var filename = Path.GetFileName(openFileDialog1.FileName);
 
                 if (FileExtensions.Contains(Path.GetExtension(filename)))
                 {

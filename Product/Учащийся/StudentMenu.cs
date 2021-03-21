@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
@@ -88,7 +89,17 @@ namespace Product
             {
                 if (selectedIndex != -1)
                 {
-                    Process.Start($"{_tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial}");
+                    var baseDirectory = Assembly.GetExecutingAssembly().Location;
+                    var filename = _tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial;
+
+                    if (string.IsNullOrWhiteSpace(filename))
+                    {
+                        throw new Exception();
+                    }
+
+                    var file = baseDirectory + "\\" + filename;
+                    MessageBox.Show(file);
+                    Process.Start(file);
                 }
             }
             catch (Exception)
