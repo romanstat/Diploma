@@ -67,11 +67,5 @@ namespace Product.Преподаватель
             _test.RemoveSecondPart(listBox1.Items[selectedIndex].ToString());
             listBox1.Items.RemoveAt(selectedIndex);
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            textBox1.Clear();
-            textBox2.Clear();
-        }
     }
 }
