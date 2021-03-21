@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Product.Преподаватель
@@ -51,7 +50,7 @@ namespace Product.Преподаватель
             }
 
             textBox1.Text = listBox1.Items[selectedIndex].ToString();
-            textBox2.Text = string.Join(", ", _test._questionSecondPart[textBox1.Text]);
+            textBox2.Text = _test._questionSecondPart[textBox1.Text];
             _test.RemoveSecondPart(textBox1.Text);
             listBox1.Items.RemoveAt(selectedIndex);
         }
