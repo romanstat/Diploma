@@ -89,7 +89,7 @@ namespace Product
             {
                 if (selectedIndex != -1)
                 {
-                    var baseDirectory = Assembly.GetExecutingAssembly().Location;
+                    var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                     var filename = _tests.First(t => t.Theme == listBox1.Items[selectedIndex].ToString()).PathToMaterial;
 
                     if (string.IsNullOrWhiteSpace(filename))
@@ -98,7 +98,6 @@ namespace Product
                     }
 
                     var file = baseDirectory + "\\" + filename;
-                    MessageBox.Show(file);
                     Process.Start(file);
                 }
             }
