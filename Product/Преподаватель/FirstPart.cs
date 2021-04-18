@@ -28,7 +28,7 @@ namespace Product.Преподаватель
                 return;
             }
 
-            var splitedText = textBox2.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            var splitedText = textBox2.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).Select(t => t.Trim()).ToList();
 
             if (!splitedText.Any(t => "*".Contains(t.First())))
             {

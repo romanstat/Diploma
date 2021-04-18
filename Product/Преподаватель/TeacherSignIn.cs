@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Product.Преподаватель;
+using System;
 using System.Windows.Forms;
 
 namespace Product
@@ -11,18 +12,30 @@ namespace Product
             BackgroundImage = Background.Theme;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "college" && textBox2.Text == "MRCCollegeMRC")
+            using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                Hide();
-                new TeacherMenu().ShowDialog();
-                Close();
+                var teacher = await context.Teachers.FindAsync(1);
+
+                if (textBox1.Text == teacher.Login && textBox2.Text == teacher.Password)
+                {
+                    Hide();
+                    new TeacherMenu().ShowDialog();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверные данные");
+                }
             }
-            else
-            {
-                MessageBox.Show("Неверные данные");
-            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new TeacherReset().ShowDialog();
+            Show();
         }
     }
 }
