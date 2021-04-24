@@ -85,9 +85,6 @@ namespace Product.Учащийся
             else
             {
                 panel1.Controls.Clear();
-                AutoSize = false;
-                Size = new Size(1200, 432);
-                AutoSize = true;
 
                 _currentQuestion = _questionsThirdPart[_numberOfQuestion];
                 _currentAnswers = _test._questionThirdPart[_currentQuestion];

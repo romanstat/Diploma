@@ -178,5 +178,12 @@ namespace Product
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void сменитьЛогинИПарольToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new TeacherReset().ShowDialog();
+            Show();
+        }
     }
 }

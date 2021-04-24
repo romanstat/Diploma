@@ -73,7 +73,7 @@ namespace Product.Преподаватель
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(227, 371);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 57);
+            this.button1.Size = new System.Drawing.Size(233, 47);
             this.button1.TabIndex = 12;
             this.button1.Text = "Подтвердить";
             this.button1.UseVisualStyleBackColor = false;

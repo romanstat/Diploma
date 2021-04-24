@@ -38,6 +38,7 @@
             this.результатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.сменитьЛогинИПарольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,8 @@
             this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьToolStripMenuItem,
-            this.результатыToolStripMenuItem});
+            this.результатыToolStripMenuItem,
+            this.сменитьЛогинИПарольToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1280, 41);
@@ -135,6 +137,13 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // сменитьЛогинИПарольToolStripMenuItem
+            // 
+            this.сменитьЛогинИПарольToolStripMenuItem.Name = "сменитьЛогинИПарольToolStripMenuItem";
+            this.сменитьЛогинИПарольToolStripMenuItem.Size = new System.Drawing.Size(311, 37);
+            this.сменитьЛогинИПарольToolStripMenuItem.Text = "Сменить логин и пароль";
+            this.сменитьЛогинИПарольToolStripMenuItem.Click += new System.EventHandler(this.сменитьЛогинИПарольToolStripMenuItem_Click);
+            // 
             // TeacherMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,5 +183,6 @@
         private System.Windows.Forms.ToolStripMenuItem результатыToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem сменитьЛогинИПарольToolStripMenuItem;
     }
 }

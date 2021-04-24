@@ -11,17 +11,18 @@ namespace Product.Преподаватель
             BackgroundImage = Background.Theme;
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(textBox1.Text) || !string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 using (var context = new ApplicationDbContext())
                 {
-                    var teacher = await context.Teachers.FindAsync(1);
+                    var teacher = context.Teachers.Find(1);
                     teacher.Login = textBox1.Text;
                     teacher.Password = textBox2.Text;
-                    await context.SaveChangesAsync();
+                    context.SaveChanges();
                 }
+
                 Close();
             }
             else
