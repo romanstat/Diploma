@@ -189,6 +189,9 @@
     <Compile Include="ChooseTheme.Designer.cs">
       <DependentUpon>ChooseTheme.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoubleBufferPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Migrations\20210223185834_Initial.cs" />
     <Compile Include="Migrations\20210223185834_Initial.designer.cs">
       <DependentUpon>20210223185834_Initial.cs</DependentUpon>

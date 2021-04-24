@@ -16,7 +16,7 @@ namespace Product.Учащийся
         private readonly List<string> _questionsThirdPart;
         private string _currentQuestion;
         private List<string[]> _currentAnswers;
-        private List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>>();
+        private readonly List<Tuple<string, bool, string, string>> _result = new List<Tuple<string, bool, string, string>>();
         private bool IsCorrectQuestion = true;
 
         public PassingThirdPart(Test test, List<string> questionsThirdPart, int numberOfPoints, DateTime endOfTest, List<Tuple<string, bool, string, string>> result)
